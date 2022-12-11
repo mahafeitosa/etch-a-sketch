@@ -4,20 +4,22 @@
 let color = 'black';
 let click = false;
 
+// Let the DOM be loaded before
 document.addEventListener('DOMContentLoaded', function () {
-  createBoard(16); // Change number to set board size
+  createBoard(16); // Change number to set default board size
   document.querySelector('body').addEventListener('click', (e) => {
     if (e.target.tagName != 'button') {
       click = !click;
       let draw = document.querySelector('#draw');
       if (click) {
-        draw.innerHTML = 'Ready to draw';
+        draw.innerHTML = 'Click to stop drawing';
       } else {
-        draw.innerHTML = 'Not allowed to draw';
+        draw.innerHTML = 'Click to draw';
       }
     }
   });
 
+  // Button onclick will prompt user to select size of board
   let btnPopup = document.querySelector('#popup');
   btnPopup.addEventListener('click', () => {
     let size = getSize();
@@ -41,7 +43,7 @@ function createBoard(size) {
 
 // Get user's input to choose board size
 function getSize() {
-  let userInput = prompt('Choose size of the board');
+  let userInput = prompt('Choose size of the board between 1 and 100');
   let message = document.querySelector('#message');
   if (userInput == '') {
     message.innerHTML = 'Please choose a number';
@@ -53,6 +55,7 @@ function getSize() {
   }
 }
 
+// Add functionality to random button to generate random color
 function colorDiv() {
   if (click) {
     if (color == 'random') {

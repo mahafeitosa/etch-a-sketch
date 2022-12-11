@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="" />
-    <meta name="description" content="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ==================== CSS / Icons ==================== -->
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main.css">
 
     <title>Etch-A-Sketch</title>
   </head>
 
   <body>
-    <h1>Etch-A-Sketch</h1>
+    <main>
+      <h1>Etch-A-Sketch</h1>
 
-    <header>
-      <h2>Select size</h2>
-      <button id="popup">Select</button>
-    </header>
+      <header>
+        <h2>Select size</h2>
+        <button class="btn" id="popup">Select</button>
+      </header>
 
-    <p id="message"></p>
-    <p id="draw"></p>
+      <p id="message"></p>
+      <p id="draw"></p>
 
-    <div class="board"></div>
+      <div class="board"></div>
 
-    <footer>
-      <button class="btn" onclick="setColor('black')">Black</button>
-      <button class="btn" onclick="setColor('random')">Random</button>
-      <button class="btn" onclick="resetBoard()">Reset</button>
-    </footer>
+      <footer>
+        <button class="btn" onclick="setColor('black')">Black</button>
+        <button class="btn" onclick="setColor('random')">Random Color</button>
+        <button class="btn" onclick="resetBoard()">Reset</button>
+      </footer>
+    </main>
 
     <!-- ==================== Scripts ==================== -->
     <script src="js/main.js"></script>
