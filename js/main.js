@@ -1,9 +1,23 @@
 'use strict';
 
+// Global variables
 let color = 'black';
+let click = false;
 
 document.addEventListener('DOMContentLoaded', function () {
   createBoard(16); // Change number to set board size
+  document.querySelector('body').addEventListener('click', (e) => {
+    if (e.target.tagName != 'button') {
+      click = !click;
+      let draw = document.querySelector('#draw');
+      if (click) {
+        draw.innerHTML = 'Ready to draw';
+      } else {
+        draw.innerHTML = 'Not allowed to draw';
+      }
+    }
+  });
+
   let btnPopup = document.querySelector('#popup');
   btnPopup.addEventListener('click', () => {
     let size = getSize();
@@ -40,10 +54,12 @@ function getSize() {
 }
 
 function colorDiv() {
-  if (color == 'random') {
-    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-  } else {
-    this.style.backgroundColor = 'black';
+  if (click) {
+    if (color == 'random') {
+      this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else {
+      this.style.backgroundColor = 'black';
+    }
   }
 }
 
