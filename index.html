@@ -17,15 +17,17 @@
 
     <header>
       <h2>Select size</h2>
-      <button>select</button>
+      <button id="popup">Select</button>
     </header>
+
+    <p id="message"></p>
 
     <div class="board"></div>
 
     <footer>
-      <button>Black</button>
-      <button>Random</button>
-      <button>Reset</button>
+      <button class="btn" onclick="setColor('black')">Black</button>
+      <button class="btn" onclick="setColor('random')">Random</button>
+      <button class="btn" onclick="resetBoard()">Reset</button>
     </footer>
 
     <!-- ==================== Scripts ==================== -->
