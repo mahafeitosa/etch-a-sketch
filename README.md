@@ -1,1 +1,1 @@
-# etch-a-sketch
+# Etch-a-sketch game from Odin Project
